@@ -1,0 +1,25 @@
+<h3>Bienvenidos</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Company name</th>
+                    <th scope="col">Show</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Destroy</th>
+                </tr>
+            </thead>
+            <tbody> 
+                <%= render 'companies' %>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Company', new_company_path %>
