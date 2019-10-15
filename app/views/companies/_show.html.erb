@@ -5,5 +5,19 @@
   <%= @company.name %>
 </p>
 
+<%= form_with(model: [@company, Complaint.new]) do |f| %>
+<%= f.text_area :detail %>
+<%= f.submit 'Comentar'%>
+<% end %>
+
+<% @complaints.each do |complaint| %>
+  <% if complaint.company_id == @company.id %>
+    <div id="new_complaint">
+      <%= complaint.created_at %>
+      <%= complaint.detail %>
+    </div>
+  <% end %>
+<% end %>
+
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>
