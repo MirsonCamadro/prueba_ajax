@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-8">
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -17,9 +17,10 @@
             </tbody>
         </table>
     </div>
+    <div class="col-4">
+        <%= render 'form', company: @company %>
+    </div>
   </div>
 </div>
 
 <br>
-
-<%= link_to 'New Company', new_company_path %>
