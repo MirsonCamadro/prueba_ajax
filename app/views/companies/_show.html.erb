@@ -6,14 +6,14 @@
 </p>
 
 <%= form_with(model: [@company, Complaint.new]) do |f| %>
-<%= f.text_area :detail %>
-<%= f.submit 'Comentar'%>
+  <%= f.text_area :detail %>
+  <%= f.submit 'Comentar'%>
 <% end %>
 
 <% @complaints.each do |complaint| %>
-  <% if complaint.company_id == @company.id %>
+  <% if @company.id == complaint.company_id %>
     <div id="new_complaint">
-      <%= complaint.created_at %>
+      <%= complaint.created_at.to_date %>
       <%= complaint.detail %>
     </div>
   <% end %>

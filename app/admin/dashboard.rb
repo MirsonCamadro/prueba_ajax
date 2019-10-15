@@ -8,7 +8,27 @@ ActiveAdmin.register_page "Dashboard" do
         small I18n.t("active_admin.dashboard_welcome.call_to_action")
       end
     end
-
+    
+    
+    panel "cantidades" do
+    columns do
+      column do
+        panel "Cantidad de usuarios" do
+          User.count
+        end
+      end
+      column do
+        panel "Cantidad de empresas" do
+          Company.count
+        end
+      end
+      column do
+        panel "Cantidad de reclamos" do
+          Complaint.count
+        end
+      end
+    end
+  end
     # Here is an example of a simple dashboard with columns and panels.
     #
     # columns do

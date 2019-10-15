@@ -19,7 +19,9 @@ ActiveAdmin.register Complaint do
     column :user_id do |user|
         user.user.email
       end
-    column :company_id
+    column :company_id do |company|
+        company.company.name
+    end
     column :detail
     actions
   end
